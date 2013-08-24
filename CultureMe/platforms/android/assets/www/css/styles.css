@@ -1,3 +1,23 @@
 body {
 	background-color: #33B5E5
 }
+
+.absolute-center {
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.correct {
+	background-color: green;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.incorrect {
+	background-color: red;
+	padding: 5px;
+	border-radius: 10px;
+}
