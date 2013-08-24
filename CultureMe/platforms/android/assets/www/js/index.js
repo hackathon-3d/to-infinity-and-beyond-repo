@@ -34,6 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        //app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -41,9 +42,20 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
+        var buttonElement = document.getElementById("btnAlert").setAttribute('style', 'display:block;');
+
+
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     }
 };
+    function clicked(){
+
+        alert("You called.");
+
+        var ghostElement = document.getElementById("ghost").setAttribute('style', 'display:block;');
+
+    };
+
