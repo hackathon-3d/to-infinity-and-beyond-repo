@@ -33,6 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        konami.load(alertfnc());
         //app.receivedEvent('deviceready');
     },
     // // Update DOM on a Received Event
@@ -50,14 +51,10 @@ var app = {
     //     console.log('Received Event: ' + id);
     // }
 };
-    function clicked(){
 
-        alert("You called.");
-
-        var ghostElement = document.getElementById("ghost").setAttribute('style', 'display:block;');
-
+    function alertfnc(){
+        alert("KONAMI!");
     };
-
     function accepted(){
 
         window.localStorage.setItem("1", '<h2>What language do they speak in Switzerland?</h2>'+
