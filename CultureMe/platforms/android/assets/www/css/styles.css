@@ -22,8 +22,17 @@ body {
 	border-radius: 10px;
 }
 
+.question {
+	padding: 10px;
+	font-size: 2em;
+}
+
 .options {
 	padding: 10px;
+	font-size: 1em;
+}
+
+.resultscore {
 	font-size: 2em;
 }
 
@@ -33,8 +42,4 @@ body {
 
 .header2 {
 	font-size: 3em;
-}
-
-#btnNext {
-	float: right;
 }

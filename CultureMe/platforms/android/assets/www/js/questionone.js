@@ -41,12 +41,15 @@ var currentQn = "";
         var checked = document.querySelector('input[name="optionsRadio"]:checked').value;
 
         if(checked == correctAnswer){
-            //Change color on answer and button
-            window.localStorage.setItem("correctAns", parseInt(window.localStorage.getItem("correctAns"))+1)
+            //Change color on answer
+            window.localStorage.setItem("correctAns", parseInt(window.localStorage.getItem("correctAns"))+1);
+            var d = document.getElementById(checked).parentNode;
+            d.className = d.className + " correct";
         }
         else{
-            //change color on answer and button
-            alert("incorrect");
+            //change color on answer
+            var d = document.getElementById(checked).parentNode;
+            d.className = d.className + " incorrect";
         }
 
         window.localStorage.setItem("totalQns", parseInt(window.localStorage.getItem("totalQns"))+1);
