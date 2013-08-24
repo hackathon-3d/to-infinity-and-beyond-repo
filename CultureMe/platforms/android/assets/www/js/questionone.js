@@ -18,37 +18,34 @@ var app = {
         //app.receivedEvent('deviceready');
         data();
     },
-    // // Update DOM on a Received Event
-    // receivedEvent: function(id) {
-    //     var parentElement = document.getElementById(id);
-    //     var listeningElement = parentElement.querySelector('.listenin    g');
-    //     var receivedElement = parentElement.querySelector('.received');
-
-    //     var buttonElement = document.getElementById("btnAlert").setAttribute('style', 'display:block;');
-
-
-    //     listeningElement.setAttribute('style', 'display:none;');
-    //     receivedElement.setAttribute('style', 'display:block;');
-
-    //     console.log('Received Event: ' + id);
-    // }
 };
 
 var correctAnswer = "";
 var currentQn = "";
 
     function data(){
+        if (window.localStorage.getItem("totalQns") < window.localStorage.getItem("numQns")) {
+            var item = getRandomQn();
+        }
+        else{
+            window.location.href="results.html";
+        }
 
-        var item = getRandomQn();
-        //alert(item);
+        
 
         document.getElementById('lblQn').innerHTML = item;
     };
 
-    function nextQuestion(){
-        //window.localStorage.setItem("nextQn", parseInt(window.localStorage.getItem("nextQn"))+1);
+    function checkAnswer(){
 
+        window.localStorage.setItem("totalQns", parseInt(window.localStorage.getItem("totalQns"))+1);
+        document.getElementById("btnCheck").setAttribute('style', 'display:none;');
+        document.getElementById("btnNext").setAttribute('style', 'display:block;');
+    };
+
+    function nextQuestion(){
         window.location.href="questionone.html";
+        
     };
 
     function getRandomQn(){
@@ -56,24 +53,20 @@ var currentQn = "";
         var item = window.localStorage.getItem(randomNum);
         var answered = window.localStorage.getItem("answered");
         var answeredlst = answered.split('|');
-        alert("answeredlst" + answeredlst);
         var keepGoing = true;
 
         
 
         if(answered != "") {
             while(keepGoing){
-                alert("indexOf: " + answeredlst.indexOf(randomNum));
                 if (answeredlst.indexOf(randomNum.toString()) == -1){
                     window.localStorage.setItem("answered", window.localStorage.getItem("answered")+randomNum+"|");
                     currentQn = randomNum;
-                    alert(currentQn);
                     return item;
                 }
                 else{
                     randomNum = parseInt(Math.random()*window.localStorage.getItem("numQns"))+1;
                     item = window.localStorage.getItem(randomNum);
-                    alert(randomNum);
                 }
             }
         }
@@ -81,7 +74,6 @@ var currentQn = "";
             
             currentQn = randomNum;
             window.localStorage.setItem("answered", window.localStorage.getItem("answered")+randomNum+"|");
-            alert(currentQn);
             return item;
         }
     }

@@ -281,9 +281,9 @@ window.localStorage.setItem("10", '<h2>What word derived from German describes a
                 '</br>'+
              '| option2');
 
-        window.localStorage.setItem("nextQn", "1");
+        window.localStorage.setItem("totalQns", "0");
 
-        window.localStorage.setItem("numQns", "10");
+        window.localStorage.setItem("numQns", "5");
 
         window.localStorage.setItem("correctAns", "0");
 
