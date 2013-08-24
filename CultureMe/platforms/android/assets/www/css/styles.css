@@ -21,3 +21,20 @@ body {
 	padding: 5px;
 	border-radius: 10px;
 }
+
+.options {
+	padding: 10px;
+	font-size: 2em;
+}
+
+.header1 {
+	font-size: 4em;
+}
+
+.header2 {
+	font-size: 3em;
+}
+
+#btnNext {
+	float: right;
+}
