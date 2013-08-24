@@ -34,6 +34,7 @@ var currentQn = "";
         }
 
         document.getElementById('lblQn').innerHTML = item;
+        document.getElementById('btnCheck').innerHTML = '<p><button type="button" class="btn btn-default btn-lg" onClick="checkAnswer();">Check Answer</button></p>';
     };
 
     function checkAnswer(){

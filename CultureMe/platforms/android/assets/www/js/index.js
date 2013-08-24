@@ -56,7 +56,7 @@ var app = {
         alert("KONAMI!");
     };
     function accepted(){
-
+        document.getElementById('btnWorld').setAttribute("src", "img/worldbuttondown.png")
         window.localStorage.setItem("1", '<h2>What language do they speak in Switzerland?</h2>'+
                 '<label class="options">'+
                     '<input type="radio" name="optionsRadio" id="option1" value="option1" />'+
