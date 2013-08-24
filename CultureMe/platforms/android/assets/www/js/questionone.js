@@ -26,17 +26,28 @@ var currentQn = "";
     function data(){
         if (window.localStorage.getItem("totalQns") < window.localStorage.getItem("numQns")) {
             var item = getRandomQn();
+            correctAnswer = item.split("| ")[1];
+            item = item.split("| ")[0];
         }
         else{
             window.location.href="results.html";
         }
 
-        
-
         document.getElementById('lblQn').innerHTML = item;
     };
 
     function checkAnswer(){
+
+        var checked = document.querySelector('input[name="optionsRadio"]:checked').value;
+
+        if(checked == correctAnswer){
+            //Change color on answer and button
+            window.localStorage.setItem("correctAns", parseInt(window.localStorage.getItem("correctAns"))+1)
+        }
+        else{
+            //change color on answer and button
+            alert("incorrect");
+        }
 
         window.localStorage.setItem("totalQns", parseInt(window.localStorage.getItem("totalQns"))+1);
         document.getElementById("btnCheck").setAttribute('style', 'display:none;');
